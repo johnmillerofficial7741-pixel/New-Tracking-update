@@ -1,0 +1,80 @@
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Transglobal Secure Logistics Tracking</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+  <!-- Header with logo in circle and flying bird -->
+  <div class="header">
+    <div class="logo-circle">
+      <svg viewBox="0 0 100 100" class="circle-logo-svg">
+        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" class="logo-text-svg">
+          TSL
+        </text>
+        <path id="bird" d="M10,70 Q30,50 50,70 Q70,50 90,70"/>
+      </svg>
+    </div>
+    <h2>Transglobal Secure Logistics</h2>
+  </div>
+
+  <!-- Tracking input area -->
+  <div class="tracking-container">
+    <h3>Track Your Shipment</h3>
+    <input type="text" id="trackingNumber" placeholder="Enter tracking number">
+    <br>
+    <button onclick="trackPackage()">Track</button>
+  </div>
+
+  <!-- Tracking result and map (hidden by default) -->
+  <div id="trackingResult" class="tracking-result"></div>
+  <div id="map" style="height:400px; max-width:800px; margin:auto; display:none;"></div>
+
+  <!-- Alerts section -->
+  <div class="alerts-section">
+    <div class="alert">
+      <h2>Alert: Text & Email Scams</h2>
+      <p>If you get a text or email claiming to be from TSL about a package awaiting action or a delivery failure, don't click it: Delete it immediately. This is an attempt to steal your personal information. Find out how to protect yourself.</p>
+    </div>
+
+    <div class="alert">
+      <h2>New Requirements for Packages Sent Internationally</h2>
+      <p>Packages sent internationally will now require more detailed content descriptions on customs forms. If the description isn't detailed, the package may be returned or refused.</p>
+    </div>
+
+    <div class="alert">
+      <h2>Jobs with TSL</h2>
+      <p>Find nationwide opportunities to build your career while serving the American public.</p>
+    </div>
+
+    <div class="alert">
+      <h2>TSL.COM</h2>
+    </div>
+
+    <div class="info-links">
+      <span class="fake-link">Find closest TSL location</span> | 
+      <span class="fake-link">Need help</span>
+    </div>
+  </div>
+
+  <!-- Bottom logo -->
+  <div class="bottom-logo">
+    <div class="logo-circle">
+      <svg viewBox="0 0 100 100" class="circle-logo-svg">
+        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" class="logo-text-svg">
+          TSL
+        </text>
+        <path id="bird" d="M10,70 Q30,50 50,70 Q70,50 90,70"/>
+      </svg>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

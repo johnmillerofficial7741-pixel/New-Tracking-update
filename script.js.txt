@@ -1,0 +1,40 @@
+JS
+
+function trackPackage() {
+  const number = document.getElementById('trackingNumber').value.trim();
+  const result = document.getElementById('trackingResult');
+  const mapDiv = document.getElementById('map');
+
+  if (!number) {
+    alert('Please enter a tracking number.');
+    return;
+  }
+
+  // Show spinner while loading
+  result.style.display = 'block';
+  result.innerHTML = `<div class="spinner"></div><em>Loading tracking information...</em>`;
+  mapDiv.style.display = 'none'; // hide map while loading
+
+  // Simulate loading delay (2.5 seconds)
+  setTimeout(() => {
+    result.innerHTML = `<strong>Tracking Number:</strong> <span class="tracking-number">${number}</span><br>
+                        <strong>Status:</strong> <span class="status">Delayed – Currently under customs review at Kapıkule Border, Turkey</span><br>
+                        <strong>Expected Delivery:</strong> <span class="status">Pending customs clearance</span>`;
+
+    mapDiv.style.display = 'block';
+
+    // Initialize map centered at Kapıkule Border
+    const lat = 41.6769;
+    const lng = 26.5586;
+    const map = L.map('map').setView([lat, lng], 10);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add static marker at Kapıkule Border
+    L.marker([lat, lng]).addTo(map)
+      .bindPopup('Kapıkule Border: Package currently under inspection')
+      .openPopup();
+  }, 2500); // 2.5 seconds delay
+}

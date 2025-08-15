@@ -1,0 +1,112 @@
+CSS
+
+body { margin:0; font-family: Arial, sans-serif; }
+
+.header {
+  background:#d32f2f; 
+  padding:15px 20px; 
+  color:white; 
+  display:flex; 
+  align-items:center;
+  gap:15px;
+  flex-wrap: nowrap; 
+  justify-content:flex-start;
+  flex-shrink: 1;
+}
+
+.logo-circle {
+  background-color: #1976d2;
+  border-radius: 50%;
+  width:70px;
+  height:70px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:visible;
+  transition: transform 0.3s ease;
+}
+
+.logo-circle:hover {
+  transform: translateY(-3px);
+}
+
+.circle-logo-svg {
+  width:60px;
+  height:60px;
+  overflow:visible;
+}
+
+.logo-text-svg {
+  fill:white;
+  font-weight:900;
+  font-size:24px;
+  letter-spacing:1px;
+}
+
+#bird {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: fly 2s ease-in-out infinite alternate;
+  fill: none;
+  stroke: #fff;  
+  stroke-width: 2.5;
+  transition: stroke 0.3s ease;
+}
+
+.logo-circle:hover #bird {
+  stroke: #ffeb3b;
+}
+
+@keyframes fly {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Reduced font to fit header fully */
+.header h2 {
+  margin:0;
+  font-weight:700;
+  font-size:20px;      
+  letter-spacing:1px;
+  white-space: nowrap;
+  flex-shrink: 1;
+}
+
+.tracking-container { padding:20px; max-width:800px; margin:auto; }
+.tracking-container input { padding:10px; font-size:16px; width:100%; box-sizing:border-box; }
+.tracking-container button { padding:10px; font-size:16px; background:#d32f2f; color:white; border:none; cursor:pointer; margin-top:10px; display:block; width:100%; }
+
+.alerts-section { margin-top:20px; font-family: Arial, sans-serif; max-width:800px; margin:auto; }
+.alert { margin-bottom:20px; padding:15px; border-left:5px solid #333; background-color:#f9f9f9; }
+.alert h2 { font-weight:900; font-size:18px; margin-bottom:8px; color:#111; }
+.alert p { font-weight:500; line-height:1.5; font-size:14px; color:#333; }
+
+.info-links { margin-top:15px; font-size:14px; color:#555; max-width:800px; margin:auto; }
+.fake-link { color:#1976d2; text-decoration: underline; cursor: default; margin-right:10px; }
+
+.tracking-result { margin-top:20px; padding:15px; background:#eee; border-radius:5px; display:none; text-align:center; }
+#map { margin-top:20px; border:1px solid #ccc; border-radius:5px; }
+
+.status { font-weight:bold; color:#d32f2f; }
+.tracking-number { color:#d32f2f; font-weight:bold; }
+
+.bottom-logo {
+  display:flex;
+  justify-content:center;
+  margin:30px 0;
+}
+
+/* Spinner styling */
+.spinner {
+  border: 6px solid #f3f3f3; /* Light grey */
+  border-top: 6px solid #d32f2f; /* Red */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
